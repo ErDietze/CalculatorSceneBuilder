@@ -54,20 +54,28 @@ if(event.getSource()==btnclear){
 //read numbers in from the textfiekd
 num1=Integer.parseInt(txtnum1.getText());
 num2=Integer.parseInt(txtnum2.getText());
-if(event.getSource()==btnadd){
+if (event.getSource() == btnadd) {
+            symbol = '+';
+            answer = num1 + num2;
+        } else if (event.getSource() == btnsub) {
+
+            symbol = '-';
+            answer = num1 - num2;
+
+        } else if (event.getSource() == btnmul) {
+
+            symbol = 'x';
+            answer = num1 * num2;
+
+        } else{
+            symbol='/';
+            answer = num1/num2;
+        }
+        
+        //Zeigt das Ergebnis im AnswerLabel an
+        lblanswer.setText("" + num1 + symbol + num2 + " = " + answer);
+                        
     
-    
-   
-}
-if(event.getSource()==btnsub){
-   
-}
-if(event.getSource()==btnmul){
-   
-}
-if(event.getSource()==btnadd){
-   
-}
 
     }
 
