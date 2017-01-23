@@ -19,7 +19,7 @@ import javafx.scene.control.TextField;
  * @author SenfDietze
  */
 public class FXMLDocumentController implements Initializable {
-    
+
     @FXML
     private Button btnadd;
     @FXML
@@ -34,27 +34,27 @@ public class FXMLDocumentController implements Initializable {
     private TextField txtnum1;
     @FXML
     private TextField txtnum2;
-    
+
     @FXML
     private Label lblanswer;
-    
+
     @FXML
     private void handleButtonAction(ActionEvent event) {
         int num1, num2, answer;
         char symbol;
 
-if(event.getSource()==btnclear){
-    txtnum1.setText("");
-    txtnum2.setText("");
-    txtnum2.setText("?");
-    txtnum2.requestFocus();
-    return;
-}
+        if (event.getSource() == btnclear) {
+            txtnum1.setText("");
+            txtnum2.setText("");
+            txtnum2.setText("?");
+            txtnum2.requestFocus();
+            return;
+        }
 
 //read numbers in from the textfiekd
-num1=Integer.parseInt(txtnum1.getText());
-num2=Integer.parseInt(txtnum2.getText());
-if (event.getSource() == btnadd) {
+        num1 = Integer.parseInt(txtnum1.getText());
+        num2 = Integer.parseInt(txtnum2.getText());
+        if (event.getSource() == btnadd) {
             symbol = '+';
             answer = num1 + num2;
         } else if (event.getSource() == btnsub) {
@@ -67,21 +67,19 @@ if (event.getSource() == btnadd) {
             symbol = 'x';
             answer = num1 * num2;
 
-        } else{
-            symbol='/';
-            answer = num1/num2;
+        } else {
+            symbol = '/';
+            answer = num1 / num2;
         }
-        
+
         //Zeigt das Ergebnis im AnswerLabel an
         lblanswer.setText("" + num1 + symbol + num2 + " = " + answer);
-                        
-    
 
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
+
 }
